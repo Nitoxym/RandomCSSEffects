@@ -44,11 +44,12 @@ button {
 .sg:hover {
 	background: var(--bg-t2);
 	color: rgba(255, 255, 255, 0.8) !important;
-	--s: rgba(255, 255, 255, 0.1);
+	--s: rgba(255, 255, 255, 0.05);
 	box-shadow: 50px 0 50px var(--s), -50px 0 50px var(--s);
 }
 
 .sg:active {
+	--s: rgba(255, 255, 255, 0.1);
 	background: var(--bg-t3);
 	color: white !important;
 }
