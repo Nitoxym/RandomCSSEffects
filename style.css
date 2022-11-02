@@ -1,0 +1,80 @@
+@font-face {
+	font-family: Quicksand;
+	url: url(Quicksand.ttf);
+}
+
+* {
+	font-family: Quicksand;
+}
+
+:root {
+	--bg: rgb(58, 67, 82);
+	--bg-t1: rgba(58, 67, 82, 0.9);
+	--bg-t2: rgba(58, 67, 82, 0.7);
+	--bg-t3: rgba(58, 67, 82, 0.5);
+}
+
+body {
+	background: var(--bg);
+	text-align: center;
+	margin-top: 100px;
+}
+
+button {
+	text-align: center;
+}
+
+/* Simple Gradient */
+.sg {
+	background: var(--bg-t1);
+	color: rgba(255, 255, 255, 0.7) !important;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	font-size: 150%;
+	font-weight: 500;
+	color: white;
+	padding: 20px 50px;
+	border-radius: 15px;
+	position: relative;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.sg:hover {
+	background: var(--bg-t2);
+	color: rgba(255, 255, 255, 0.8) !important;
+	--s: rgba(255, 255, 255, 0.1);
+	box-shadow: 50px 0 50px var(--s), -50px 0 50px var(--s);
+}
+
+.sg:active {
+	background: var(--bg-t3);
+	color: white !important;
+}
+
+.sg::before {
+	content: "";
+	--t1: rgba(255, 255, 255, 0.4);
+	--t2: rgba(255, 255, 255, 0.2);
+	background: linear-gradient(-45deg, var(--t1) 14%, var(--t2) 28%, var(--t2) 43%, var(--t1) 57%, var(--t1) 72%, var(--t2) 86%);
+	background-size: 270% auto;
+	animation: sg-border 3s infinite linear;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	z-index: -1;
+	border-radius: 15px;
+}
+
+@keyframes sg-border {
+	from {
+		background-position: 0%;
+	}
+	
+	to {
+		background-position: 100%;
+	}
+}
