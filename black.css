@@ -17,6 +17,10 @@ body {
 	margin-top: 100px;
 }
 
+.space {
+	margin: 200px;
+}
+
 button {
 	text-align: center;
 }
@@ -35,8 +39,6 @@ button {
 	padding: 20px 50px;
 	position: relative;
 	cursor: pointer;
-	position: relative;
-	box-sizing: border-box;
 	transition: 0.5s;
 }
 
@@ -69,11 +71,60 @@ button {
 	pointer-events: none;
 }
 
-.rf1:hover, .rf1:hover::before {
+.rf1:hover, .rf1:hover::before,
+.rf1:active, .rf1:active::before {
 	background: var(--bg-rf1);
 	color: white;
 }
 
 .rf1:active, .rf1:active::before {
 	outline-color: white;
+}
+
+/* Frame 1 */
+.fr1 {
+	--bg-fr1: #00FF00;
+	background: var(--bg);
+	color: var(--bg-fr1);
+	border: none;
+	outline: none;
+	box-shadow: none;
+	font-size: 150%;
+	font-weight: 700;
+	padding: 15px 45px;
+	position: relative;
+	top: 5px;
+	left: 5px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.fr1::before, .fr1::after {
+	content: "";
+	background: var(--bg-fr1);
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	z-index: -1;
+	transition: 0.5s;
+}
+
+.fr1::after {
+	top: initial;
+	left: initial;
+	bottom: -5px;
+	right: -5px;
+}
+
+.fr1:hover::before, .fr1:hover::after,
+.fr1:active::before, .fr1:active::after {
+	width: calc(100% + 10px);
+	height: calc(100% + 10px);
+}
+
+.fr1:active {
+	background: var(--bg-fr1);
+	color: white;
 }

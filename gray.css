@@ -40,7 +40,8 @@ button {
 	transition: 0.5s;
 }
 
-.sg:hover {
+.sg:hover,
+.sg:active {
 	background: var(--bg-t2);
 	color: rgba(255, 255, 255, 0.8);
 	--s: rgba(255, 255, 255, 0.05);
