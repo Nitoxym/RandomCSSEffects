@@ -1,0 +1,79 @@
+@font-face {
+	font-family: Quicksand;
+	url: url(Quicksand.ttf);
+}
+
+* {
+	font-family: Quicksand;
+}
+
+:root {
+	--bg: rgb(0, 0, 0);
+}
+
+body {
+	background: var(--bg);
+	text-align: center;
+	margin-top: 100px;
+}
+
+button {
+	text-align: center;
+}
+
+/* Reflect 1 */
+.rf1 {
+	--bg-rf1: red;
+	background: transparent;
+	outline: 4px solid var(--bg-rf1);
+	outline-offset: -4px;
+	color: var(--bg-rf1);
+	border: none;
+	box-shadow: none;
+	font-size: 150%;
+	font-weight: 700;
+	padding: 20px 50px;
+	position: relative;
+	cursor: pointer;
+	position: relative;
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+
+.rf1::before {
+	content: "Reflect 1";
+	background: transparent;
+	outline: 4px solid var(--bg-rf1);
+	outline-offset: -4px;
+	color: var(--bg-rf1);
+	opacity: 0.3;
+	width: 100%;
+	padding: 20px 0;
+	position: absolute;
+	top: calc(100% + 10px);
+	left: 0;
+	font-weight: 700;
+	transform: scaleY(-1);
+	pointer-events: none;
+	transition: 0.5s;
+}
+
+.rf1::after {
+	content: "";
+	background: linear-gradient(to top, var(--bg), transparent);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: calc(100% + 10px);
+	left: 0;
+	pointer-events: none;
+}
+
+.rf1:hover, .rf1:hover::before {
+	background: var(--bg-rf1);
+	color: white;
+}
+
+.rf1:active, .rf1:active::before {
+	outline-color: white;
+}
