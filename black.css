@@ -81,6 +81,10 @@ button {
 	outline-color: white;
 }
 
+.rf1:active {
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
 /* Frame 1 */
 .fr1 {
 	--bg-fr1: #00FF00;
@@ -122,6 +126,10 @@ button {
 .fr1:active::before, .fr1:active::after {
 	width: calc(100% + 10px);
 	height: calc(100% + 10px);
+}
+
+.fr1:active::before {
+	box-shadow: 0 0 20px var(--bg-fr1);
 }
 
 .fr1:active {
